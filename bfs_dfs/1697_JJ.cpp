@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int N,K,now,size,val;
+int N,K,now,sz,val;
 bool check[100001];
 int tmp[3];
 int result=0;
@@ -18,9 +18,9 @@ int bfs()
     if(N==K) return 0;
     while(!q.empty())
     {
-        size=q.size();
+        sz=q.size();
         result=result+1;
-        for(int j=0;j<size;j++)
+        for(int j=0;j<sz;j++)
         {
             now=q.front();
             q.pop();
