@@ -3,6 +3,8 @@
 #include <algorithm>
 #include <queue>
 
+
+
 using namespace std;
 
 int T,M,N,K,now_x,now_y,tmp_x,tmp_y,size;
