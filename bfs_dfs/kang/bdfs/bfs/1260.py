@@ -2,6 +2,7 @@ import queue
 
 N,M,V = map(int, input().split())
 node = [[0]*(N+1) for _ in range(N+1)]
+print(node)
 for i in range(M):
     x,y = map(int, input().split())
     node[x][y] = 1
