@@ -12,6 +12,7 @@ N,M = map(int,sys.stdin.readline().split())
 link = []
 for i in range(M):
     u,v = map(int,sys.stdin.readline().split())
+    adj[u][v]=1
     link.append([u,v])
 
 visit =[False]*N

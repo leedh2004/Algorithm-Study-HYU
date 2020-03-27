@@ -12,19 +12,20 @@ dy = [0,0,-1,1]
 def bfs(start_x,start_y):
     q = queue.Queue()
     q.put((start_x,start_y))
+    visit[start_x][start_y]=True
 
     while not q.empty():
         x,y = q.get()
-        visit[x][y] = True
         
 
         for i in range(4):
             nx = x+dx[i]
             ny = y+dy[i]
             if nx >= 0 and nx < N and ny >= 0 and ny < M and mat[nx][ny] == 1 and visit[nx][ny] == False :
+                
                 q.put((nx,ny))
                 visit[nx][ny] = True
-                v_mat[nx][ny] = min(v_mat[nx][ny],v_mat[x][y]+1)
+                v_mat[nx][ny] = v_mat[x][y]+1
 
     print(v_mat[N-1][M-1])
 

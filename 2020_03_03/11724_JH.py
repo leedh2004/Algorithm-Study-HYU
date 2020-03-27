@@ -19,10 +19,8 @@ for i in range(M) :
     mat[b-1][a-1] = 1
 
 for j in range(N):
-    for k in range(N):
-        if mat[j][k] == 1 and visit[k] == False:
-            dfs(j)    #dfs 한번 실행되면 연결요소 하나를 찾는거임
-            count += 1
+    if visit[j] == False:
+        dfs(j)    #dfs 한번 실행되면 연결요소 하나를 찾는거임
+        count += 1
 
-result = len(list(filter(lambda x: x==False,visit))) + count
-print(result)
+print(count)
