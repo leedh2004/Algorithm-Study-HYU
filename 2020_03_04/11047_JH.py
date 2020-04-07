@@ -11,6 +11,8 @@ for i in range(N-1,-1,-1):
     count = K//L[i] #현재 가격의 돈은 몇개나 들어가야 하나
     K -= L[i]*count
     result += count
+    # if K <=0 :
+    #     break  여기 있어야지 한번 덜 돔
 
 print(result)
 
