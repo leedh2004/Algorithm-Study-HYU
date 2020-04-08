@@ -1,7 +1,5 @@
 #include <iostream>
 #include <cstdio>
-#include <cstdlib>
-#include <cstring>
 
 typedef long long int ll;
 
