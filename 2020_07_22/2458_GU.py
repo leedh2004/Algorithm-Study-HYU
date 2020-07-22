@@ -24,7 +24,7 @@ for i in range(n):
             check[i] += 1
             check[j] += 1
 print(check.count(n-1))
-"""dontKnow = False
+"""#dontKnow = False
 for i in range(n):
     student = d[i]
     for j in range(n):

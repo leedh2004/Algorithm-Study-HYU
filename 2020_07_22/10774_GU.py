@@ -22,3 +22,4 @@ for i in range(J+1):
     tmp = jersey[i] - player[i]
     if tmp >= 0: cnt += 1
 print(cnt - zeros)
+#

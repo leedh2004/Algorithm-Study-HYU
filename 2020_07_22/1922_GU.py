@@ -16,7 +16,7 @@ def union(x,y):
 n = int(sys.stdin.readline())
 m = int(sys.stdin.readline())
 parent = list(range(n+1))
-#parent = parent[1:]
+##parent = parent[1:]
 ways = []
 for i in range(m):
     ways.append(list(map(int,sys.stdin.readline().split())))

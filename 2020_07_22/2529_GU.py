@@ -70,7 +70,7 @@ print(''.join(min_))
 			visit[next_v] = 1
 			dfs(next_v)
 	stack.append(v)
-
+#
 k = int(sys.stdin.readline())
 A = list(sys.stdin.readline().split())
 d = dict()
