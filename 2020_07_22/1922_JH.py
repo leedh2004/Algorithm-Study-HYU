@@ -1,3 +1,5 @@
+#1922 - 네트워크 연결
+
 def find(x):
     global uni
     if(uni[x] == x):

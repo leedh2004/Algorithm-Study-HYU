@@ -1,3 +1,5 @@
+#2352 - 반도체 설계
+
 import copy    #시간초과 나네용 ㅠ
 def check(n,tmp,pre_connect):
     global N,result

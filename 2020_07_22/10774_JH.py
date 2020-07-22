@@ -1,3 +1,5 @@
+#10774 - 저지
+
 J = int(input())
 A = int(input())
 U = [ 0 for _ in range(1000000) ]

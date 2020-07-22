@@ -1,3 +1,5 @@
+#2529 - 부등호
+
 import copy
 def check(n,tmp,pre_digit):
     global K,max_result,min_result
