@@ -1,7 +1,7 @@
 import heapq
 
+#위상정렬
 def topologicalsort(indegree):
-    
     indegree_down = indegree[:]
     indegree_up = indegree[:]
     heap_min = []

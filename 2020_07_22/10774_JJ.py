@@ -10,7 +10,6 @@ for i in range(a):
     if check[int(tmp[1])-1] == 0 and size[int(tmp[1])-1] <= tmp[0]:
         ans = ans +1 
         check[int(tmp[1])-1] = 1
-        #print(size,check,tmp)
 print(ans)
 
 

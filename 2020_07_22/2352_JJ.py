@@ -10,4 +10,5 @@ for i in range(n):
         if value[i]>=value[j] and dp[i] < dp[j]+1:
             dp[i] = dp[j]+1
 
+#정답출력
 print(max(dp))

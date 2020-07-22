@@ -26,12 +26,6 @@ bool is_in(int x,int y,int z){
     return 0<=x && x<l && 0<=y && y< r && 0<=z && z<c ;
 }
 
-// bool is_End(int x,int y,int z){
-//     return x==End.X && y==End.Y && z==End.Z;
-// }
-
-
-
 int main()
 {
     bool visited[30][30][30];

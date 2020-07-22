@@ -5,6 +5,7 @@ for _ in range(m):
     a,b =  map(int,input().split())
     d[a-1][b-1] = True
 
+#플로이드와샬
 for i in range(n):
     for j in range(n):
         for k in range(n):

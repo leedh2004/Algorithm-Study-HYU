@@ -1,5 +1,6 @@
 from heapq import *
 
+#집합 대표 찾기
 def find(a):
     if parent[a] == a:
         return a
