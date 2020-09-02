@@ -8,12 +8,50 @@ using namespace std;
 
 typedef long long int ll;
 
-int n;
+int n,now_n;
 int lank[257];
-bool visited[257];
-
-
 ll ans=0;
+
+int main(){
+
+    //입력
+    scanf("%d",&n);
+    now_n = n;
+    for(int i=1;i<=n;i++) scanf("%d",&lank[i]);
+
+    for(int j=1;j<n;j++){
+        int min_index = 0;
+        int min_lank = -1;
+
+        //랭크 낮은애 찾기
+        for(int i=1;i<=now_n;i++){
+            if(min_lank < lank[i]){
+                min_index = i;
+                min_lank =lank[i];
+            }
+        }
+
+        //합
+        if (min_index==1) ans = ans + lank[min_index] - lank[min_index+1] ;
+        else if (min_index==now_n) ans = ans + lank[min_index] - lank[min_index-1] ;
+        else ans = ans + min(lank[min_index] - lank[min_index-1],lank[min_index] - lank[min_index+1]);
+       
+        for(int i=min_index;i<now_n;i++) lank[i] = lank[i+1];
+        now_n--;
+
+    }
+    
+    printf("%lld\n",ans);
+    
+    return 0;
+
+}
+
+
+
+/*
+ll ans=0;
+bool visited[257];
 
 
 priority_queue <pair<int, pair<int,int> > > pq;
@@ -79,3 +117,4 @@ int main(){
 
     return 0;
 }
+*/
