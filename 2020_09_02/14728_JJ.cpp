@@ -22,6 +22,7 @@ int main(){
     }
 
     for(int i=1;i<=n;i++){
+        //for(int j=Time[i];j<=t;j++) dp[j] = max(dp[j],dp[j-Time[i]]+point[i]);
         for(int j=t;j>=Time[i];j--) dp[j] = max(dp[j],dp[j-Time[i]]+point[i]);
     }
 
