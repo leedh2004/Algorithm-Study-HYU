@@ -25,9 +25,9 @@ for i in range(M):
 for i in range(N):
     if result :
         break
-    if visit[i] == False :
+    if visit[i] == False :  #이 if 필요 없음. 어차피 for문 돌때마다 visit 전부 false니까
         dfs(i,0)
-        visit[i] = False  #더 적은 수가 트리에서 위를 차지한다는 보장이 없으므로
+        visit[i] = False  #처음 시작점도 False 만들어줘야하니까
             
 if result :
     print(1)

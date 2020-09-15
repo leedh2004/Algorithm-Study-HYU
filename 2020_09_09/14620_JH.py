@@ -1,4 +1,4 @@
-import copy  #왜 틀렸는지 모르겠어요 ㅠㅠ
+import copy
 def dfs(x,y,tmp,count,visit):
     global N, mat,result, dx, dy
     visit[x][y] = True
@@ -15,7 +15,7 @@ def dfs(x,y,tmp,count,visit):
         return 
 
     for i in range(x,N-1):
-        for j in range(y,N-1):
+        for j in range(0,N-1):
             if(visit[i][j]==False):
                 dfs(i,j,tmp,count+1,copy.deepcopy(visit))
 
