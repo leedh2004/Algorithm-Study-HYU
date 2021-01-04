@@ -8,7 +8,6 @@ def solution(s):
             if( len(s)-(j+i) != 0 and (len(s)-(j+i)) < i  ) :
                 sub_strings.append(''.join(s[j+i:]))
                 break
-        # print(sub_strings)
         
 
         tmp_result = ''  #자른 애들 비교
@@ -31,7 +30,6 @@ def solution(s):
             tmp_result += str(count_sub)+first
 
         result[tmp_result] = len(tmp_result)
-    # print(result)
     answer = min(result.values())
 
     return answer

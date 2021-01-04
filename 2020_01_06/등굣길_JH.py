@@ -24,6 +24,7 @@ print(solution(4,3,[[2,2]]))
 
 
 
+#bfs로 짜볼랬는데 실패함
 #정확성8 - 시간초과, 효율성 전부 실패
 # from collections import deque
 # def solution(m, n, puddles):

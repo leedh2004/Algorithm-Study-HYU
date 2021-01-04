@@ -1,4 +1,4 @@
-#이렇게 짜면 당연히 시간초과 날줄 알았는데...
+#이렇게 짜면 당연히 시간초과 날줄 알았는데... (순열로 경우의수 만들어서 set에 넣고 다 제곱근 수 전까지로 다 나눠보기)
 from itertools import permutations
 import math
 
