@@ -42,8 +42,10 @@ while 1:
     else:
         if dA < dB:
             B = P
-        else:
+        elif dB < dA:
             A = P
+        else:
+            break
 
     if getDistance(A, B) < val:
         break
