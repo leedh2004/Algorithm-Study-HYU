@@ -18,7 +18,7 @@ def solution(s):
                 count_sub += 1
             else :
                 if count_sub == 1 :
-                    tmp_result += first
+                    tmp_result += firstㄴㅊㅊㅍ
                     first = sub_strings[j]
                 else :
                     tmp_result += str(count_sub) + first

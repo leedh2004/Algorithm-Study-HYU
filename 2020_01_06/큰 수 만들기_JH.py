@@ -2,8 +2,6 @@
 number =  '1231234'
 k = 3
 
-tmp_result = []
-
 for i, char in enumerate(number) :
     for j in range(len(tmp_result)-1, -1, -1):
         if char > tmp_result[j] and k>0 :
