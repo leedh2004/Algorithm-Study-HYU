@@ -1,3 +1,8 @@
-# BOJ
-BOJ source codes
-link -> https://www.acmicpc.net/
+
+# 2020-summer-Algo-study
+
+### commit message standard
+
+##### "JJ #issuenumber submit"
+
+##### "JH #issunnumber update"
