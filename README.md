@@ -1,9 +1,11 @@
-# 2021-WS-Algo-study
+# Algo-study
 
-### commit message standard
+forder naming - "YYYY_MM_주차"  
+file naming- "Problem Number" + "name"  
+ex)1753_JH , 1753_JJ
 
-##### "JJ #issuenumber submit"
+## 규칙
 
-##### "JH #issunnumber update"
+1. 문제선정 - 백준에서 각 2문제씩 총 6문제 선정  
+2. 기간 - 제출 : 수요일 스터디 전까지  
 
-##### "GU #issunnumber update"
