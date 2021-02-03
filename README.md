@@ -1,5 +1,4 @@
-
-# 2020-summer-Algo-study
+# 2020-fall-Algo-study
 
 ### commit message standard
 
