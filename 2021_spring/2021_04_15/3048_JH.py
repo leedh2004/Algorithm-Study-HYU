@@ -2,7 +2,10 @@ import sys
 input = sys.stdin.readline
 
 N1, N2 = map(int, input().strip().split())
-L1, L2 = [{'group': 1, 'name': ant} for ant in input().strip()][::-1], [{'group': 2, 'name': ant} for ant in input().strip()]
+L1, L2 = [
+    {'group': 1, 'name': ant} for ant in input().strip()][::-1], 
+    [{'group': 2, 'name': ant} for ant in input().strip()]
+print(L1)
 ants = L1+L2
 T = int(input())
 
