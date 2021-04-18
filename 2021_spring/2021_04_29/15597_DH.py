@@ -10,8 +10,6 @@ countryToInt[C] = 2
 countryToInt[D] = 3
 
 predict = [ [0.0] * 4 for _ in range(4) ]
-last_predict = defaultdict(int)
-trashP = 0
 
 for _ in range(6):
     a, b, w, d, l = input().split()
@@ -21,8 +19,10 @@ for _ in range(6):
     predict[a][b] = (w, d, l)
     predict[b][a] = (l, d, w)
 
+last_predict = defaultdict(int)
+
 def make_results(cnt, results):
-    global L, A, B, C, D, predict, countryToInt, RESULT, last_predict, trashP 
+    global L, A, B, C, D, predict, countryToInt, last_predict 
     if cnt == len(L):
         dd = defaultdict(int)
         p = 1.0
@@ -40,11 +40,9 @@ def make_results(cnt, results):
                 p *= predict[ai][bi][2]
         # 결과가 나왔는데, 동점자가 있는경우 처리해야 함
         if p > 0:
-            trashP += p 
             parse_list = [(dd[A], A), (dd[B], B), (dd[C], C), (dd[D], D)]
             parse_list.sort(reverse=True)
             score = [ [] for _ in range(10) ]
-            # print(p, parse_list)
             for s, c in parse_list:
                 score[s].append(c)
             cnt = 0
@@ -61,14 +59,10 @@ def make_results(cnt, results):
                 if cnt >= 2:
                     break
         return
-
     a, b = L[cnt]
-    resultA = results + [(a, b, 'w')]
-    make_results(cnt+1, resultA)
-    resultB = results + [(a, b, 'd')]
-    make_results(cnt+1, resultB)
-    resultC = results + [(a, b, 'l')]
-    make_results(cnt+1, resultC)
+    make_results(cnt+1, results + [(a, b, 'w')])
+    make_results(cnt+1, results + [(a, b, 'd')])
+    make_results(cnt+1, results + [(a, b, 'l')])
 
 make_results(0, [])
 print(last_predict[A])
