@@ -9,7 +9,7 @@ for i in range(N):
     DP1[1][i+1], DP1[i+1][1] = mat[0][i], mat[i][0]
 
 for i in range(N):
-    DP2[1][i], DP2[i+1][-2] = mat[0][i], mat[i][i]
+    DP2[1][i], DP2[i+1][-2] = mat[0][i], mat[i][-1]
 
 
 for i in range(2,N+1,1):
@@ -20,13 +20,13 @@ for i in range(2,N+1,1):
     for j in range(0,N-1,1):
         DP2[i][j] = DP2[i-1][j+1] + mat[i-1][j]
 
-# for _ in range(N+1):
-#     print(DP1[_])
+for _ in range(N+1):
+    print(DP1[_])
 
-# print('-----------------------')
+print('-----------------------')
 
-# for _ in range(N+1):
-#     print(DP2[_])
+for _ in range(N+1):
+    print(DP2[_])
 
 result = 0
 
