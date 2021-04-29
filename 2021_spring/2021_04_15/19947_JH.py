@@ -9,18 +9,13 @@ DP[0][0], DP[0][1], DP[0][2] = H, H, H
 for i in range(1, Y+1, 1):
     if i-1 >= 0 :
         DP[i][0] = int(max(DP[i-1])*percent[1])
-    else :
-        DP[i][0] = DP[i-1][0]
 
     if i-3 >= 0 :
         DP[i][1] = int(max(DP[i-3])*percent[3])
-    else :
-        DP[i][1] = DP[i-1][1]
 
     if i-5 >= 0 :
         DP[i][2] = int(max(DP[i-5])*percent[5])
-    else :
-        DP[i][2] = DP[i-1][2]
+
 
 # print(DP)
 print(max(DP[Y]))

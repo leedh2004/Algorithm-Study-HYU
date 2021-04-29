@@ -3,6 +3,7 @@ input = sys.stdin.readline
 
 N = int(input().strip())
 L = list(map(lambda x : bool(int(x)), input().strip().split()))
+map(lamdba x : x.count())
 result = 0
 
 for i in range(N):

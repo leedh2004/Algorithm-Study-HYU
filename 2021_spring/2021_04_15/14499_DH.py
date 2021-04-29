@@ -2,7 +2,7 @@
 class Dice:
     up, down, east, west, north, south = 0, 0, 0, 0, 0, 0
     def setValue(self, u, d, e, w, n, s):
-        self.up = u
+        [self.up, self.down] = [u,d]
         self.down = d
         self.east = e
         self.west = w

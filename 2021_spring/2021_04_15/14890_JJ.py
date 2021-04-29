@@ -40,9 +40,10 @@ def checkRow(Row):
         flag=False
 
       else :
-    
+        # print(Row)
+        # print(i,i+1)
         for j in range(l):
-          
+          # print(Row[i]-1,Row[i+1+j],check[i+1+j])
           if Row[i]-1 != Row[i+1+j] or check[i+1+j]:
             flag = False
           check[i+j+1] = True
