@@ -13,15 +13,12 @@ odd_dir = [1,3,5,7]
 
 def move(mat, ball):
     global N, direction
-    
     dx, dy = direction[ball[4]]
     nx,ny = (ball[0]+dx*ball[3])%N+1, (ball[1]+dy*ball[3])%N+1
-
     mat[(nx,ny)].append([ball[2], ball[3], ball[4]])
 
 def merge(mat):
     global fire_balls, even_dir, odd_dir
-    
     for (x,y) in mat:
         if len(mat[(x,y)]) >= 2 :
             m,s,e_d, o_d =0,0, True, True
