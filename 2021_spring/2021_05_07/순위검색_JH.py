@@ -1,6 +1,7 @@
 import sys
 input = sys.stdin.readline
 from collections import deque
+import bisect
 
 class Node(object):
     def __init__(self):
@@ -22,55 +23,28 @@ class Tree(object):
 
     def search(self, query, node):
         curr_node = node
-        query = deque(query)
+        # print(list(query))
+        query = deque(list(query)[:])
         count = 0
-        
+  
         t = query.popleft()
         if not query :
             if t == '-':
                 return len(curr_node.data)
             else :
-                # N = len(curr_node.data)
-                # idx = 0
-                # for i in range(N):
-                #     if curr_node.data[i] >= int(t) :
-                #         break
-                #     idx += 1
-                # return  N-idx
-
                 t = int(t)
                 N = len(curr_node.data)
-                left, right = 0 ,N
-                # print(curr_node.data)
-                # print('a',N,left,right)
-                while left <= right :
-                    mid = (left+right)//2
-                    if curr_node.data[mid] == t :
-                        right = mid
-                    if curr_node.data[mid] < t :
-                        left = mid+1
-                    else :
-                        right = mid-1
-                print('b',t,left,right, N-right+1)
-                if curr_node[right] == t :
-                    right -= 1
-                print('b',t,left,right, N-right+1)  # << 이줄 왜 실행 안 되는지 아는 사람 ?? 제발 ㅠㅠ
-                return  N-(rihgt)
+                # print( len(curr_node.data) - bisect.bisect_left(curr_node.data,t))
+                return   len(curr_node.data) - bisect.bisect_left(curr_node.data,t)
                 
 
         if t == '-':
             for key in curr_node.children :
-                try :
+                  if key in curr_node.children:
                     count += self.search(query, curr_node.children[key])
-                except :
-                    count += 0
-
         else :
-            try :
+            if t in curr_node.children:
                 count += self.search(query, curr_node.children[t])
-            except :
-                count += 0
-
         return count
 
 

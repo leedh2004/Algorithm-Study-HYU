@@ -17,9 +17,8 @@ for idx in range(n):
 for _ in range(k):
     bag.append(int(input()))
 
-# 큰 작은 부터
+# 작은거 부터
 bag = sorted(bag)
-
 ans = 0
 pq = []
 

@@ -30,7 +30,7 @@ def solution(p):
         u.append(t)
         if count == 0:
             break
-    v = []
+
     while string :
         v.append(string.popleft())
 
