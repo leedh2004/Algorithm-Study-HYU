@@ -19,3 +19,5 @@ while start < end:
         start += 1
 
 print(minVal, maxVal)
+
+
