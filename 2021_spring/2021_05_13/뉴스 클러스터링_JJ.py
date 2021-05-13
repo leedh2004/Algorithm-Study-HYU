@@ -1,14 +1,14 @@
 from collections import defaultdict
 
 def solution(str1, str2):
-    dict1 = getSet(str1)
-    dict2 = getSet(str2)
+    dict1 = makeDict(str1)
+    dict2 = makeDict(str2)
     # print(dict1)
     # print(dict2)
     answer = int(getZacard(dict1,dict2)*65536)
     return answer
 
-def getSet(str1):
+def makeDict(str1):
     ret = defaultdict(int)
     for i in range(0,len(str1)-1):
         st = str1[i:i+2]
