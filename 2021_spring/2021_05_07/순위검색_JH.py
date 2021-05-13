@@ -53,8 +53,11 @@ class Tree(object):
                         right = mid-1
                 print('b',t,left,right, N-right+1)
                 if curr_node[right] == t :
+                    print('b2')
                     right -= 1
-                print('b',t,left,right, N-right+1)  # << 이줄 왜 실행 안 되는지 아는 사람 ?? 제발 ㅠㅠ
+                else:
+                    print('b3')
+                print('b4',t,left,right, N-right+1)  # << 이줄 왜 실행 안 되는지 아는 사람 ?? 제발 ㅠㅠ
                 return  N-(rihgt)
                 
 
@@ -63,12 +66,14 @@ class Tree(object):
                 try :
                     count += self.search(query, curr_node.children[key])
                 except :
+                    print('except')
                     count += 0
 
         else :
             try :
                 count += self.search(query, curr_node.children[t])
             except :
+                print('except')
                 count += 0
 
         return count
