@@ -1,6 +1,7 @@
 import sys
 input = sys.stdin.readline
 from collections import deque
+from bisect import bisect_left
 
 class Node(object):
     def __init__(self):
@@ -30,32 +31,8 @@ class Tree(object):
             if t == '-':
                 return len(curr_node.data)
             else :
-                # N = len(curr_node.data)
-                # idx = 0
-                # for i in range(N):
-                #     if curr_node.data[i] >= int(t) :
-                #         break
-                #     idx += 1
-                # return  N-idx
-
                 t = int(t)
-                N = len(curr_node.data)
-                left, right = 0 ,N
-                # print(curr_node.data)
-                # print('a',N,left,right)
-                while left <= right :
-                    mid = (left+right)//2
-                    if curr_node.data[mid] == t :
-                        right = mid
-                    if curr_node.data[mid] < t :
-                        left = mid+1
-                    else :
-                        right = mid-1
-                print('b',t,left,right, N-right+1)
-                if curr_node[right] == t :
-                    right -= 1
-                print('b',t,left,right, N-right+1)  # << 이줄 왜 실행 안 되는지 아는 사람 ?? 제발 ㅠㅠ
-                return  N-(rihgt)
+                return (len(curr_node.data) - bisect_left(curr_node.data,t))
                 
 
         if t == '-':
@@ -63,12 +40,14 @@ class Tree(object):
                 try :
                     count += self.search(query, curr_node.children[key])
                 except :
+                    return 0
                     count += 0
 
         else :
             try :
                 count += self.search(query, curr_node.children[t])
             except :
+                return 0
                 count += 0
 
         return count

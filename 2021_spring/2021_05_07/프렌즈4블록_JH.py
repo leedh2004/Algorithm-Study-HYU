@@ -1,44 +1,41 @@
-def solution(str1, str2):
-    A,B = [],[]
-    for (first, second) in zip(str1, str1[1:]) :
-        tmp = "".join([first, second])
-        if tmp.isalpha() :
-            A.append(tmp.lower())
+from copy import deepcopy
 
-    for (first, second) in zip(str2, str2[1:]) :
-        tmp = "".join([first, second])
-        if tmp.isalpha() :
-            B.append(tmp.lower())
-    
-    len_A, len_B = len(A), len(B)
+def solution(m, n, board):
+    answer = 0
+    board = [list(board[_]) for _ in range(m)]
+    d = [ [0,0], [1,0], [0,1], [1,1] ]
 
-    inter = 0
+    while True :
+        flag = True
+        new_board = deepcopy(board)
 
-    if len_A > len_B :
-        for b in B :
-            if b in A :
-                A.remove(b)
-                inter += 1
+        for i in range(m-1):
+            for j in range(n-1):
+                if board[i][j]!='*' and board[i][j]==board[i+1][j]==board[i][j+1]==board[i+1][j+1]:
+                    for dx,dy in d :
+                        nx,ny = i+dx, j+dy
+                        if new_board[nx][ny] != '*':
+                            new_board[nx][ny] = '*'
+                            answer += 1
+                            flag = False
 
-    else :
-        for a in A :
-            if a in B :
-                B.remove(a)
-                inter += 1
+        if flag :
+            break
 
-    uni = len(A+B)
+        for j in range(n):
+            new_col = ""
+            for i in range(m):
+                if new_board[i][j]!='*':
+                    new_col+=new_board[i][j]
+            new_col = '*'*(m-len(new_col)) + new_col
 
-    if uni == 0:
-        return 65536
+            for i in range(m):
+                new_board[i][j] = new_col[i]
 
-    answer = int(inter/uni*65536)
+        board = new_board
+
     return answer
 
 
-
-print(solution("FRANCE", "french"))
-print(solution("handshake", "shake hands"))
-print(solution("aa1+aa2", "AAAA12"))
-print(solution("E=M*C^2", "e=m*c^2"))
-
-    
+print(solution(4,5,["CCBDE", "AAADE", "AAABF", "CCBBF"]))
+print(solution(6,6,["TTTANT", "RRFACC", "RRRFCC", "TRRRAA", "TTMMMF", "TMMTTJ"]))
