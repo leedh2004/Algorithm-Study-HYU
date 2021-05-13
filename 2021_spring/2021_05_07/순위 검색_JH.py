@@ -1,9 +1,9 @@
 import sys
 input = sys.stdin.readline
 from collections import deque
-
 from bisect import bisect_left
 
+class Node(object):
     def __init__(self):
         self.data = []
         self.children = {}
@@ -23,29 +23,32 @@ class Tree(object):
 
     def search(self, query, node):
         curr_node = node
-        # print(list(query))
-        query = deque(list(query)[:])
+        query = deque(query)
         count = 0
-  
+        
         t = query.popleft()
         if not query :
             if t == '-':
                 return len(curr_node.data)
             else :
                 t = int(t)
-
                 return (len(curr_node.data) - bisect_left(curr_node.data,t))
-
                 
 
         if t == '-':
             for key in curr_node.children :
-                  if key in curr_node.children:
+                try :
                     count += self.search(query, curr_node.children[key])
+                except :
+                    return 0
+                    count += 0
 
         else :
-            if t in curr_node.children:
+            try :
                 count += self.search(query, curr_node.children[t])
+            except :
+                return 0
+                count += 0
 
         return count
 
@@ -112,4 +115,3 @@ def solution(info, query):
 
 
 print(solution(["java backend junior pizza 150","python frontend senior chicken 210","python frontend senior chicken 150","cpp backend senior pizza 260","java backend junior chicken 80","python backend senior chicken 50"],["java and backend and junior and pizza 100","python and frontend and senior and chicken 200","cpp and - and senior and pizza 250","- and backend and senior and - 150","- and - and - and chicken 100","- and - and - and - 150"]))
-
