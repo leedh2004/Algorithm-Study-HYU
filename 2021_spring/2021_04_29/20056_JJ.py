@@ -12,9 +12,11 @@ def move():
         nx = i+dx[d]*s 
         ny = j+dy[d]*s 
 
+        # 1번과 n번은 연결돠어 있음
         nx = (nx+n) % n
         ny = (ny+n) % n
         
+        # d 방향으로 이동
         newTable[nx][ny].append(table[i][j][k][:])
   return newTable
 
@@ -74,12 +76,16 @@ dy = [0,1,1,1,0,-1,-1,-1]
 
 for i in range(m):
   r, c, m, s, d = map(int,input().split())
+  # 질량, 방향, 속력 저장
   table[r-1][c-1].append([m,s,d])
-
 
 for i in range(k):
   # printTable()
+
+  # 파이어볼 이동
   table = move()
+
+  # 이동한 뒤, 파이어볼 2개 이상 있는 칸 처리
   afterMove()
 # printTable()
 print(sumTable()) 

@@ -50,8 +50,6 @@ else :
     elif maxVal2 == point[i]:
       maxVal2List.append(i)
 
-  # print(secondPoint,maxVal2)
-
   if len(maxVal2List) > 1:
     for i in range(len(maxVal2List)):
       ret[maxVal2List[i]] = 1.0 / len(maxVal2List)

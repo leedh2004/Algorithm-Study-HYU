@@ -1,7 +1,6 @@
 def solution(key, lock):
     m,n = len(key),len(lock)
     homes = getlockList(lock)
-    # print(homes)
 
     # 회전
     for _ in range(4):
