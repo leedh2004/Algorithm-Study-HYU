@@ -1,22 +1,13 @@
 import sys
-sys.setrecursionlimit(1000000)
-# flag = 누구 턴인지
-# pypy - 메모리초과, python- 시간초과
 
 
 def sol(flag, left, right):
-    if d[left][right] != -1:
-        return d[left][right]
 
-    # 한 장 남은 경우
-    # if left == right:
-    #     if flag:
-    #         return cards[left]
-    #     else:
-    #         return 0
-    # 혹시 모름
     if left > right:
         return 0
+
+    if d[left][right] != -1:
+        return d[left][right]
 
     if flag:
         d[left][right] = max(cards[left] + sol(False, left+1, right),
@@ -33,5 +24,5 @@ T = int(sys.stdin.readline())
 for _ in range(T):
     N = int(sys.stdin.readline())
     cards = list(map(int, sys.stdin.readline().split()))
-    d = [[-1 for _ in range(N+1)] for _ in range(N+1)]
+    d = [[-1 for _ in range(N)] for _ in range(N)]
     print(sol(True, 0, N-1))
