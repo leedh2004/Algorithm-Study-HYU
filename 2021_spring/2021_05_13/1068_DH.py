@@ -11,8 +11,9 @@ for i in range(N):
         C[P[i]].append(i)
 
 rootIdx = P.index(-1)
+
 def dfs(here):
-    global ans, D
+    # global ans, D
     # 왜 global 없으면 안댐?
     if len(C[here]) == 0:
         ans += 1
@@ -20,8 +21,9 @@ def dfs(here):
     for c in C[here]:
         dfs(c)
 
-if D == rootIdx:
-    print(0)
-else:
-    dfs(rootIdx)
-    print(ans)
+if __name__ == '__main__':
+    if D == rootIdx:
+        print(0)
+    else:
+        dfs(rootIdx)
+        print(ans)

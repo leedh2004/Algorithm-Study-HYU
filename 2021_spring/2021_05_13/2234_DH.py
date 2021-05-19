@@ -30,6 +30,7 @@ for y in range(M):
             R[room_number] = v
             max_v = max(v, max_v)
 visited2 = [ [ False for _ in range(N) ]for _ in range(M) ]
+
 def dfs2(y, x):
     global visited, visited2, N, M, B, max_sum_v, R
     if visited2[y][x] == True:

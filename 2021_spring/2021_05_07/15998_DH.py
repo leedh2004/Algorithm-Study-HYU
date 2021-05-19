@@ -21,11 +21,12 @@ for i in range(N):
 
 s = 0
 for i in range(1, N+1):
-    # if B[i] - B[i-1] == A[i]:
-    #     continue
-    # if M and M <= B[i] or A[i] > 0) or A[i] < 0 and -A[i] < B[i-1]:
-    #     print(-1)
-    #     sys.exit(0)
+    if B[i] - B[i-1] == A[i]:
+        continue
+    
+    if M and M <= B[i] or A[i] > 0 or A[i] < 0 and -A[i] < B[i-1]:
+        print(-1)
+        sys.exit(0)
 
     if A[i] >= 0:
         s = s + A[i]
@@ -33,7 +34,7 @@ for i in range(1, N+1):
             print(-1)
             sys.exit(0)
     else:
-        if B[i] >= M and M or (-A[i] <= B[i-1]):
+        if B[i] >= M and M or -A[i] < B[i-1]:
             print(-1)
             sys.exit(0)
         s = B[i]

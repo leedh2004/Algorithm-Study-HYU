@@ -37,6 +37,5 @@ for i in range(N):
                     if 0 <= ny < N and 0 <= nx < M and board[ny][nx] == 1 and not visited[ny][nx]:
                         q.append((ny, nx))
             B = max(B, ret)
-
 print(A)
 print(B)
