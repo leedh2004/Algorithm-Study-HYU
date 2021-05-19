@@ -6,8 +6,7 @@ mat = [ list(map(int,input().strip().split())) for _ in range(N) ]
 
 def solution(N, mat):
     if N == 1 :
-        print(mat[0][0])
-        exit()
+        return mat[0][0]
     nn = N//2
     next_mat = [ [] for i in range(nn) ]
 
@@ -16,7 +15,6 @@ def solution(N, mat):
             tmp = [ mat[i][j], mat[i][j+1], mat[i+1][j], mat[i+1][j+1] ]
             tmp.sort()
             next_mat[i//2].append(tmp[-2]) 
+    return solution(nn, next_mat)
 
-    solution(nn, next_mat)
-
-solution(N,mat)
+print(solution(N,mat))

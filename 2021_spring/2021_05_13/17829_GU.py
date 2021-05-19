@@ -15,5 +15,4 @@ while True:
     if len(grid2) == 1:
        print(grid2[0])
        break
-    grid = [grid2[i:i+int(sqrt(len(grid2)))]
-            for i in range(0, len(grid2), int(sqrt(len(grid2))))]
+    grid = [grid2[i:i+int(sqrt(len(grid2)))] for i in range(0, len(grid2), int(sqrt(len(grid2))))]
