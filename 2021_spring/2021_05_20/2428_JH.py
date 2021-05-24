@@ -1,14 +1,14 @@
 import sys
 input = sys.stdin.readline
-from bisect import bisect_left
+from bisect import bisect_left, bisect_right
 
-N = int(input())
+N = int(input(2))
 L = list(map(int,input().strip().split()))
 L.sort()
 result = 0
 
-for i in range(1,N):
-    idx = bisect_left(L, L[i]*0.9, lo=0, hi=i-1)
-    result += i-idx
+for j in range(1,N):
+    idx = bisect_left(L, L[j]*0.9, lo=0, hi=j)
+    result += j-idx
 
 print(result)

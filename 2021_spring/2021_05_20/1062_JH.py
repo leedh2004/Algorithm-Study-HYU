@@ -26,6 +26,7 @@ if K < 5 :
 else :
     word_to_bin = [ to_bin(w) for w in L ]
     result = 0
+    # 1 << o
     powers = [ 2**i for i in range(21) ]
 
     for case in combinations(powers, K-5):

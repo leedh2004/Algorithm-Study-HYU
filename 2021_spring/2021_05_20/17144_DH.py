@@ -10,7 +10,7 @@ def printb():
         print()
 # 진공청소기의 위치 
 sy = 0
-for i in range(C):
+for i in range(R):
     if B[i][0] == -1 and B[i+1][0] == -1:
         sy = i
         break
@@ -20,7 +20,6 @@ D2 = [(1, 0), (0, 1), (-1, 0), (0, -1)]
 
 for _ in range(T):
     # 확산
-    print("확산")
     new_B = [ [0 for _ in range(C)] for _ in range(R) ]
     new_B[sy][0], new_B[sy+1][0] = -1, -1
     for y in range(R):
@@ -36,10 +35,7 @@ for _ in range(T):
                 new_B[y][x] += val - ((val // 5) * cnt)
             
     B = new_B
-    printb()
-    # 진공청소기가 돌아감
-    print("진공")
-    y, x, cnt = sy, 0, 0
+    y, x, cnt = sy - 1, 0, 0
     while not (y == sy and x == 1):
         ny, nx = y + D[cnt][0], x + D[cnt][1]
         if 0 <= ny < sy + 1 and 0 <= nx < C:
@@ -49,7 +45,7 @@ for _ in range(T):
         else:
             cnt += 1
             continue
-    y, x, cnt = sy + 1, 0, 0
+    y, x, cnt = sy + 2, 0, 0
     while not (y == sy + 1 and x == 1):
         ny, nx = y + D2[cnt][0], x + D2[cnt][1]
         if sy + 1 <= ny < R and 0 <= nx < C:
@@ -60,7 +56,6 @@ for _ in range(T):
             cnt += 1
             continue
     B[sy][1], B[sy+1][1] = 0, 0
-    printb()
 
 print(sum([ sum(B[i]) for i in range(R) ]) + 2)
 
